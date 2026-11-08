@@ -16,6 +16,8 @@ COPY --chown=appuser:appuser requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
+RUN pip install --no-cache-dir --upgrade wandb
+
 COPY --chown=appuser:appuser src ./src
 
 ENV PYTHONPATH=/app
